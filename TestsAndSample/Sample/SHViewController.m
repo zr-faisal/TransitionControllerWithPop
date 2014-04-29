@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Seivan Heidari. All rights reserved.
 //
 
+#import <POP/POP.h>
+
 
 @interface SHLargeBar : UINavigationBar
 @end
@@ -36,37 +38,31 @@
 
   [self.navigationController SH_setAnimationDuration:0.5 withPreparedTransitionBlock:^(UIView *containerView, UIViewController *fromVC, UIViewController *toVC, NSTimeInterval duration, id<SHViewControllerAnimatedTransitioning> transitionObject, SHTransitionAnimationCompletionBlock transitionDidComplete) {
     
-    if (transitionObject.isReversed == NO) {
-      toVC.view.layer.affineTransform = CGAffineTransformMakeTranslation(CGRectGetWidth(toVC.view.frame), 0);
+//    if (transitionObject.isReversed == NO) {
+//      toVC.view.layer.affineTransform = CGAffineTransformMakeTranslation(CGRectGetWidth(toVC.view.frame), 0);
+//    }
+//    else {
+//      toVC.view.layer.affineTransform = CGAffineTransformMakeTranslation(-CGRectGetWidth(toVC.view.frame), 0);
+//    }
+
+    POPBasicAnimation *anim = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerPositionX];
+    anim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+//    anim.fromValue = @(0.0);
+    anim.toValue = @(100.0);
+    anim.duration = duration*0.9;
+    if(transitionObject.isReversed) {
+      [fromVC.view.layer pop_addAnimation:anim forKey:@"slide"];
     }
     else {
-      toVC.view.layer.affineTransform = CGAffineTransformMakeTranslation(-CGRectGetWidth(toVC.view.frame), 0);
+      [toVC.view.layer pop_addAnimation:anim forKey:@"slide"];
     }
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            toVC.view.layer.affineTransform = CGAffineTransformIdentity;
+            fromVC.view.layer.affineTransform = CGAffineTransformIdentity;
+            transitionDidComplete();
+
+    });
     
-    [UIView animateWithDuration:duration delay:0 options:kNilOptions  animations:^{
-      toVC.view.layer.affineTransform = CGAffineTransformIdentity;
-      
-      if(transitionObject.isReversed) {
-        CGAffineTransform t = CGAffineTransformIdentity;
-        t = CGAffineTransformMakeTranslation(CGRectGetWidth(fromVC.view.frame), 0);
-        //      fromView.layer.affineTransform = CGAffineTransformScale(t, 0.5, 0.5);
-        fromVC.view.layer.affineTransform = t;
-        
-        
-      }
-      else {
-        CGAffineTransform t = CGAffineTransformIdentity;
-        t = CGAffineTransformMakeTranslation(-CGRectGetWidth(fromVC.view.frame), 0);
-        fromVC.view.layer.affineTransform = t;
-        
-      }
-      
-      
-    } completion:^(BOOL finished) {
-      toVC.view.layer.affineTransform = CGAffineTransformIdentity;
-      fromVC.view.layer.affineTransform = CGAffineTransformIdentity;
-      transitionDidComplete();
-    }];
 
   }];
   

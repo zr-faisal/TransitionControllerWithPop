@@ -1,10 +1,10 @@
-#SHTransitionBlocks
+#TransitionControllerWithPop
 
 [![Build Status](https://travis-ci.org/seivan/SHTransitionBlocks.png?branch=master)](https://travis-ci.org/seivan/SHTransitionBlocks)
 [![Version](https://cocoapod-badges.herokuapp.com/v/SHTransitionBlocks/badge.png)](http://cocoadocs.org/docsets/SHTransitionBlocks)
 [![Platform](https://cocoapod-badges.herokuapp.com/p/SHTransitionBlocks/badge.png)](http://cocoadocs.org/docsets/SHTransitionBlocks)
 
-> This pod is used by [`SHUIKitBlocks`](https://github.com/seivan/SHUIKitBlocks) as part of many components covering to plug the holes missing from Foundation, UIKit, CoreLocation, GameKit, MapKit and other aspects of an iOS application's architecture.
+> Testing Facebook POP library with [`SHTransitionBlocks`](https://github.com/seivan/SHTransitionBlocks) to see how it plays along transitionControllers.
 
 ***
 
