@@ -14,29 +14,6 @@ Transition API via blocks for AnimationTransition and InteractiveTransitions.
 InteractiveTransitions comes with block helpers for dealing with gestures and progress.
 All via categorizes on top of UIViewController, so it works well with UINavigationController and UITabBarController
 
-***
-
-### Installation
-
-```ruby
-pod 'SHTransitionBlocks' 
-```
-
-***
-
-### Setup
-
-Put this either in specific files or your project prefix file
-
-```objective-c
-#import "UIViewController+SHTransitionBlocks.h"
-```
-or
-```objective-c
-#import "SHTransitionBlocks.h"
-```
-
-***
 
 ### Usage with [SHNavigationControllerBlocks](https://github.com/Seivan/SHNavigationControllerBlocks)
 
