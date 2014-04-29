@@ -2,6 +2,7 @@ PODS:
   - KIF/Core (2.0.0)
   - KIF/XCTest (2.0.0):
     - KIF/Core
+  - pop (1.0.2)
   - SHNavigationControllerBlocks (2.1.0)
   - SHTestCaseAdditions (1.4.1):
     - SHTestCaseAdditions/XCTest
@@ -10,6 +11,7 @@ PODS:
 
 DEPENDENCIES:
   - KIF/XCTest (from `https://github.com/tonyd256/KIF`, branch `xctest`)
+  - pop
   - SHNavigationControllerBlocks
   - SHTestCaseAdditions
   - SHTransitionBlocks (from `../`)
@@ -23,8 +25,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   KIF: 09880fd0895146aa90b92f8d77bf5ec42f25622d
+  pop: 55f6c972fbfb644dfcf1bd6892d001feaa32cc38
   SHNavigationControllerBlocks: 4695caa6ad9c58ac8e0bb0c4b156fd6620faa9fa
   SHTestCaseAdditions: ff32e10731f37effd08c254e538c3e7998f74921
-  SHTransitionBlocks: 2a74d165e6fbb05da158c3b527b3ab34f791dccf
+  SHTransitionBlocks: c04783121bee0171b7a73a1f62735c57ca6bd292
 
-COCOAPODS: 0.29.0
+COCOAPODS: 0.32.1

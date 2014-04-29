@@ -18,3 +18,9 @@
 #define COCOAPODS_VERSION_MINOR_SHTransitionBlocks 0
 #define COCOAPODS_VERSION_PATCH_SHTransitionBlocks 0
 
+// pop
+#define COCOAPODS_POD_AVAILABLE_pop
+#define COCOAPODS_VERSION_MAJOR_pop 1
+#define COCOAPODS_VERSION_MINOR_pop 0
+#define COCOAPODS_VERSION_PATCH_pop 2
+

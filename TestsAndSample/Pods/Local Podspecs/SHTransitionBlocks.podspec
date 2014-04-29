@@ -7,10 +7,16 @@ Pod::Spec.new do |s|
   source_files   = "#{name}/**/*.{h,m}"
 
   s.version      = version
-  s.summary      = "-"
+  s.summary      = "View Controller Transition API simplified with blocks and gestures"
   s.description  = <<-DESC
 
-                    * _
+                    * Create transition animation via blocks
+                    * Create transition interaction via blocks
+                    * Manage gestures for interaction view blocks
+                    * Easier to prototype and extract/refactor out when the blocks get heavy.
+                    * Works great with SHUIKitBlocks & SHNavigationControllerBlocks
+                    * Well-tested and light weight
+                    * Easy selectors to get started quickly. 
                     
                     DESC
 
@@ -25,6 +31,8 @@ Pod::Spec.new do |s|
 
   s.source_files = source_files
   s.requires_arc = true
+  s.social_media_url = 'https://twitter.com/seivan'
+
 
 
 end
